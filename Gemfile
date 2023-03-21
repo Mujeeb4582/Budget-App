@@ -80,3 +80,5 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'webdrivers'
 end
+
+gem 'devise'
