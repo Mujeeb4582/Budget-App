@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!
   def index
-    @user = User.all
+    redirect_to categories_path if current_user.present?
   end
 end
