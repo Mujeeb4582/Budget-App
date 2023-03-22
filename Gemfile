@@ -81,4 +81,6 @@ group :development, :test do
   gem 'webdrivers'
 end
 
+gem 'bootstrap_form'
 gem 'devise'
+gem 'devise-bootstrap-form'
