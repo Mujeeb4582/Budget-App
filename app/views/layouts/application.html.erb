@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   </head>
 
   <body>
@@ -15,7 +16,6 @@
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong> |
         <%= link_to "Home", users_path, class: "navbar-link" %> |
-        <%= link_to "Profile", user_path(current_user), class: "navbar-link" %> |
         <%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %> |
         <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link"  %>
       <% end %>
