@@ -1,12 +1,11 @@
-<div class="d-flex flex-column justify-content-center">
-    <h1 class="font-weight-bold text-center display-2">Budget Tracking</h1>
-
-  <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 py-3">
+<div>
+  <h1 class="container-fluid font-weight-bold text-center display-2 position-absolute top-50 heading">Budget Tracking</h1>
+  <div class="text-center container mb-2 fixed-bottom">
     <form action="<%= new_user_session_path %>" method="get">
-      <button class="btn btn-primary btn-md">LOG IN</button>
+      <button class="btn btn-primary btn-md container-fluid mb-2">LOG IN</button>
     </form>
     <form action="<%= new_user_registration_path %>" method="get">
-      <button class="btn btn-md btn-outline-primary">SIGN UP</button>
+      <button class="btn btn-md btn-outline-primary container-fluid">SIGN UP</button>
     </form>
   </div>
 </div>
