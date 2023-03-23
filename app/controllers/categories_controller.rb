@@ -18,10 +18,10 @@ class CategoriesController < ApplicationController
     end
     redirect_to categories_path
   end
-end
 
-private
+  private
 
-def category_params
-  params.require(:category).permit(:name, :icon)
+  def category_params
+    params.require(:category).permit(:name, :icon)
+  end
 end
