@@ -26,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_115643) do
   create_table "categories_expenses", id: false, force: :cascade do |t|
     t.bigint "expense_id", null: false
     t.bigint "category_id", null: false
+    t.index ["category_id", "expense_id"], name: "index_categories_expenses_on_category_id_and_expense_id"
+    t.index ["expense_id", "category_id"], name: "index_categories_expenses_on_expense_id_and_category_id"
   end
 
   create_table "expenses", force: :cascade do |t|
