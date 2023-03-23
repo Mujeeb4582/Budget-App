@@ -19,7 +19,7 @@ class ExpensesController < ApplicationController
     if @expense.save
       flash[:notice] = 'Expense was successfully created!'
     else
-      flash[:error] = 'Expense could not be created!'
+      flash[:alert] = 'Expense could not be created!'
     end
 
     redirect_to category_expenses_path
