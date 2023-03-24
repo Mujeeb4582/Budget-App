@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :category do
-    name { 'MyString' }
-    icon { 'MyString' }
-    user { nil }
-    expense { nil }
+    sequence(:name) { |n| Faker::Lorem.unique.word.chars.first(3).join + n.to_s }
+    # icon { Faker::Lorem.word }
+    sequence(:icon) { |n| Category::ICONS[n % Category::ICONS.length] }
+    user
   end
 end

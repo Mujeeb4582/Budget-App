@@ -84,4 +84,5 @@ end
 gem 'bootstrap_form'
 gem 'devise'
 gem 'devise-bootstrap-form'
+gem 'dotenv-rails', groups: %i[development test]
 gem 'font-awesome-rails'
