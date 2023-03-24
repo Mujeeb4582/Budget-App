@@ -85,3 +85,4 @@ gem 'bootstrap_form'
 gem 'devise'
 gem 'devise-bootstrap-form'
 gem 'font-awesome-rails'
+gem 'dotenv-rails', groups: [:development, :test]
