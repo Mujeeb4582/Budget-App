@@ -1,7 +1,7 @@
 <div class="devise-bootstrap-form">
   <div class="devise-bootstrap-form-row">
     <div class="devise-bootstrap-form-col">
-      <h2 class="text-center">Log in</h2>
+      <h2 class="text-center bg-primary text-light p-2">Log in</h2>
       <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
@@ -13,7 +13,7 @@
       <% end -%>
 
       <%= f.form_group do %>
-      <%= f.submit "Log in", class: "btn btn-primary btn-block btn-lg" %>
+      <%= f.submit "Log in", class: "btn btn-primary btn-block btn-md" %>
       <% end %>
       <% end %>
       <div class="text-center">

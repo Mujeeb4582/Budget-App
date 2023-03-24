@@ -1,6 +1,31 @@
-<div class="container my-5">
-  <h1 class="text-center mb-4">Categories</h1>
+<%# --- Begin Navbar --- %>
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <strong class="nav-link text-light"><%= current_user.name %></strong>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Home", users_path, class: "nav-link active"  %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Edit profile", edit_user_registration_path, class: "nav-link text-light" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn text-light px-0"  %>
+        </li>
+      </ul>
+    </div>
+    <h1 class="mx-auto text-center mb-0 text-light">Categories</h1>
+  </div>
+</nav>
+<%# --- End Navbar --- %>
 
+<div class="container my-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <% @categories.each do |category| %>
       <div class="col">

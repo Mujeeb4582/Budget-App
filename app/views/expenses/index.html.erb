@@ -1,11 +1,16 @@
-<div class="card">
-<div class="card-header d-flex align-items-center justify-content-center">
-  <div class="d-flex align-items-center">
-    <i class="<%= @category.icon %> fa-3x mx-3"></i>
-    <h1 class="mb-0"><%= @category.name %></h1>
-  </div>
+<div class="bg-primary p-2 d-flex align-items-center">
+  <%= link_to root_path, class: "text-decoration-none text-light display-5" do %>
+  <%= fa_icon "solid arrow-left" %>
+  <% end %>
+  <h1 class="mx-auto text-center mb-0 text-light">Transaction</h1>
 </div>
-
+<div class="card mt-5">
+  <div class="card-header d-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center">
+      <i class="<%= @category.icon %> fa-3x mx-3"></i>
+      <h1 class="mb-0"><%= @category.name %></h1>
+    </div>
+  </div>
   <div class="card-body">
     <p class="card-text">Total amount: <%= number_to_currency(@total_amount) %></p>
     <ul class="list-group">
@@ -17,8 +22,7 @@
       <% end %>
     </ul>
   </div>
-  <div class="card-footer text-center">
-    <%= link_to 'Add a new transaction', new_category_expense_path, class: "btn btn-primary" %>
-    <%= link_to '< Back', root_path, class: "btn btn-secondary ml-2" %>
+  <div class="text-center container mb-2 fixed-bottom">
+    <%= link_to 'Add a new transaction', new_category_expense_path, class: "btn btn-lg btn-custom container-fluid py-3" %>
   </div>
 </div>

@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Outfit:wght@400;700&display=swap");
+
+body {
+  font-family: "Figtree", sans-serif;
+  font-family: "Outfit", sans-serif;
+}
+
 .btn-custom {
   background-color: #50a017;
   border-color: #5fb523;
@@ -8,4 +15,12 @@
   background-color: #5fb523;
   border-color: #5fb523;
   color: white;
+}
+
+.message {
+  margin-top: 4rem;
+}
+
+.heading {
+  margin-top: -5rem;
 }
