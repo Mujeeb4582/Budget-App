@@ -1,5 +1,6 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'devise'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -11,9 +12,6 @@ require 'rspec/rails'
 # Require Capybara for integration testing
 require 'capybara'
 
-# Require database_cleaner for cleaning up the database during testing
-require 'database_cleaner'
-
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
@@ -24,36 +22,18 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 
   # Use devise for authentication
+  config.infer_spec_type_from_file_location!
+  Rails.application.routes.default_url_options[:host] = 'localhost:3000'
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Warden::Test::Helpers, type: :system
+  config.include Warden::Test::Helpers, type: :request
+  config.include Devise::Test::IntegrationHelpers, type: :system
+  config.render_views = true
 
-  config.include Capybara::DSL
-  config.before(:each, type: :system) do
-    driven_by :rack_test
-  end
+  Capybara.default_driver = :selenium_chrome
 
-  config.use_transactional_fixtures = false
-
-  config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
-  end
-  config.before(:each) do
-    DatabaseCleaner.strategy = :transaction
-  end
-  config.before(:each, js: true) do
-    DatabaseCleaner.strategy = :truncation
-  end
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
-  config.before(:all) do
-    DatabaseCleaner.start
-  end
-  config.after(:all) do
-    DatabaseCleaner.clean
-  end
+  config.use_transactional_fixtures = true
 
   config.infer_spec_type_from_file_location!
 
