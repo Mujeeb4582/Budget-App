@@ -79,6 +79,6 @@ Rails.application.configure do
     :domain =>     "google.com",
     :address =>      'smtp.gmail.com',
     :port =>     587,
-    :authentication => :plain,
+    :authentication => :plain
   }
 end
