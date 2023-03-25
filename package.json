@@ -4,5 +4,10 @@
   "main": "index.js",
   "repository": "git@github.com:Mujeeb4582/Rails-Capstone-Project---Budget-App.git",
   "author": "Mujeeb ur Rahman <mujeeburahman4582@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "stylelint-config-standard": "21.x",
+    "stylelint-csstree-validator": "1.x",
+    "stylelint-scss": "3.x"
+  }
 }
