@@ -74,5 +74,8 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'bootstrap_form'
 gem 'devise'
 gem 'htmlbeautifier'
+gem 'devise-bootstrap-form'
+gem 'font-awesome-rails'

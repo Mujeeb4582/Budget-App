@@ -73,6 +73,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
+    bootstrap_form (4.5.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     builder (3.2.4)
     capybara (3.38.0)
       addressable
@@ -95,7 +98,13 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-form (0.4.0)
+      bootstrap_form (~> 4.0)
+      devise (>= 4.6.0)
+      rails (>= 5.0.0)
     erubi (1.12.0)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     htmlbeautifier (1.4.2)
@@ -238,10 +247,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap_form
   capybara
   cssbundling-rails
   debug
   devise
+  devise-bootstrap-form
+  font-awesome-rails
   htmlbeautifier
   jbuilder
   jsbundling-rails
