@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <div class="message container-fluid fixed-top">
+      <% if notice.present? %>
+        <div class="alert alert-success text-center mb-0 p-0" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <% if alert.present? %>
+        <div class="alert alert-danger text-center mb-0 p-0" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
