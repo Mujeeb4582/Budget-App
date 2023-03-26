@@ -261,7 +261,7 @@ DEPENDENCIES
   bootstrap_form
   capybara
   cssbundling-rails
-  debug
+  debug (~> 1.7, >= 1.7.1)
   devise
   devise-bootstrap-form
   font-awesome-rails
