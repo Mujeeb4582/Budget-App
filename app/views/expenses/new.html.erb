@@ -1,0 +1,22 @@
+<div class="bg-primary p-2 d-flex align-items-center">
+  <%= link_to category_expenses_path, class: "text-decoration-none text-light display-5" do %>
+    <%= fa_icon "solid arrow-left" %>
+  <% end %>
+  <h1 class="mx-auto text-center mb-0 text-light">Add Expense</h1>
+</div>
+
+<div class="container">
+  <%= form_for [@category, @expense], html: {class: "form"} do |f| %>
+    <div class="form-group">
+      <%= f.label :name, class: 'py-2 fs-5' %>
+      <%= f.text_field :name, class: "form-control", placeholder: "Expense name" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :amount, class: 'py-2 fs-5' %>
+      <%= f.text_field :amount, class: "form-control", placeholder: "Expense amount", value: number_to_currency(@expense.amount) %>
+    </div>
+    <div class="text-center container mb-2 fixed-bottom">
+      <%= f.submit "Save", class: "btn btn-lg btn-custom container-fluid py-3" %>
+    </div>
+  <% end %>
+</div>
