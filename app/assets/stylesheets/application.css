@@ -13,3 +13,149 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+  --primrycolor: #3778c2;
+  --scndrycolor: #5fb523;
+  --fontcolor: #434b54;
+  --appfont: "Roboto", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Outfit:wght@400;700&display=swap");
+
+body {
+  font-family: "Figtree", sans-serif;
+  font-family: "Outfit", sans-serif;
+}
+
+a {
+  color: var(--fontcolor);
+}
+
+.login-btn {
+  background-color: var(--primrycolor);
+  color: #fff;
+  height: 50px;
+  font-size: 1.2rem;
+  padding-top: 10px;
+  font-weight: 300;
+}
+
+.signup-btn {
+  color: var(--fontcolor);
+  height: 50px;
+  font-size: 1.2rem;
+  padding-top: 10px;
+  font-weight: 300;
+}
+
+.login-header {
+  background-color: var(--primrycolor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 5px 3px;
+  margin-bottom: 20px;
+}
+
+.arrow-back {
+  width: 40px;
+  filter:
+    invert(100%) sepia(79%) saturate(100%) hue-rotate(86deg)
+    brightness(100%) contrast(119%);
+}
+
+.login-top-btn {
+  background-color: var(--primrycolor);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.forgot-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--fontcolor);
+}
+
+.btn-custom {
+  background-color: #50a017;
+  border-color: #5fb523;
+  color: white;
+}
+
+.btn-custom:hover {
+  background-color: #5fb523;
+  border-color: #5fb523;
+  color: white;
+}
+
+.message {
+  margin-top: 4rem;
+}
+
+.heading {
+  margin-top: -5rem;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.nav-profile,
+.nav-fullname {
+  justify-self: center;
+  align-self: center;
+}
+
+.nav-fullname-text {
+  color: #fff;
+  font-family: var(--appfont);
+  font-size: 1.2rem;
+  padding-top: 5px;
+}
+
+.navbar,
+.offcanvas-body,
+.offcanvas {
+  background-color: var(--primrycolor);
+}
+
+.humberger,
+.closes {
+  filter:
+    invert(100%) sepia(79%) saturate(100%) hue-rotate(86deg)
+    brightness(100%) contrast(119%);
+  width: 30px;
+}
+
+.closebtn {
+  border: none;
+  background-color: var(--primrycolor);
+}
+
+.offcanvas-title {
+  color: #fff;
+}
+
+.nav-links {
+  border: none;
+  background-color: var(--primrycolor);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.offconvase {
+  position: absolute;
+  top: 1%;
+  left: 30%;
+  color: #fff;
+  font-family: var(--appfont);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
