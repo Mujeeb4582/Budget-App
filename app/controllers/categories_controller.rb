@@ -13,10 +13,10 @@ class CategoriesController < ApplicationController
 
     if @category.save
       flash[:notice] = 'Category was successfully created!'
+      redirect_to categories_path
     else
-      flash[:alert] = 'Category could not be created!'
+      render :new, status: :unprocessable_entity
     end
-    redirect_to categories_path
   end
 
   private
