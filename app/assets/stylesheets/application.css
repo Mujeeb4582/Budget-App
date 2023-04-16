@@ -13,44 +13,36 @@
  *= require_tree .
  *= require_self
  */
-
-:root {
-  --primrycolor: #3778c2;
-  --scndrycolor: #5fb523;
-  --fontcolor: #434b54;
-  --appfont: "Roboto", sans-serif;
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Outfit:wght@400;700&display=swap");
 
+:root {
+  --primary-color: #1266f1;
+  --secondary-color: #5fb523;
+  --font-color: #434b54;
+}
+
+
 body {
-  font-family: "Figtree", sans-serif;
-  font-family: "Outfit", sans-serif;
+  font-family: "Figtree", "Outfit", sans-serif;
+  color: var(--font-color);
 }
 
-a {
-  color: var(--fontcolor);
+a,
+.sign_up_btn {
+  color: var(--font-color);
 }
 
-.login-btn {
-  background-color: var(--primrycolor);
-  color: #fff;
-  height: 50px;
-  font-size: 1.2rem;
-  padding-top: 10px;
-  font-weight: 300;
-}
-
-.signup-btn {
-  color: var(--fontcolor);
-  height: 50px;
-  font-size: 1.2rem;
-  padding-top: 10px;
-  font-weight: 300;
+.login-header,
+.login-top-btn,
+.navbar,
+.offcanvas,
+.offcanvas-body,
+.nav-links,
+.close-btn {
+  background-color: var(--primary-color);
 }
 
 .login-header {
-  background-color: var(--primrycolor);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,70 +51,38 @@ a {
   margin-bottom: 20px;
 }
 
-.arrow-back {
-  width: 40px;
-  filter:
-    invert(100%) sepia(79%) saturate(100%) hue-rotate(86deg)
-    brightness(100%) contrast(119%);
-}
-
 .login-top-btn {
-  background-color: var(--primrycolor);
   border: none;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+
+.btn-custom {
+  background-color: var(--secondary-color);
+  border-color: white;
+  color: white;
+}
+
+.btn-custom:hover {
+  background-color: #50a017;
+  border: 1px solid white;
+  color: white;
 }
 
 .forgot-text {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--fontcolor);
 }
 
-.btn-custom {
-  background-color: #50a017;
-  border-color: #5fb523;
-  color: white;
-}
-
-.btn-custom:hover {
-  background-color: #5fb523;
-  border-color: #5fb523;
-  color: white;
-}
-
-.message {
-  margin-top: 4rem;
-}
-
-.heading {
-  margin-top: -5rem;
+.alert {
+  z-index: 100;
 }
 
 .profile-image {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-}
-
-.nav-profile,
-.nav-fullname {
-  justify-self: center;
-  align-self: center;
-}
-
-.nav-fullname-text {
-  color: #fff;
-  font-family: var(--appfont);
-  font-size: 1.2rem;
-  padding-top: 5px;
-}
-
-.navbar,
-.offcanvas-body,
-.offcanvas {
-  background-color: var(--primrycolor);
 }
 
 .humberger,
@@ -133,9 +93,8 @@ a {
   width: 30px;
 }
 
-.closebtn {
+.close-btn {
   border: none;
-  background-color: var(--primrycolor);
 }
 
 .offcanvas-title {
@@ -144,10 +103,10 @@ a {
 
 .nav-links {
   border: none;
-  background-color: var(--primrycolor);
   color: #fff;
   text-align: center;
   padding: 5px 0;
+  font-size: 1.2rem;
 }
 
 .offconvase {
@@ -155,7 +114,51 @@ a {
   top: 1%;
   left: 30%;
   color: #fff;
-  font-family: var(--appfont);
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.animate {
+  animation: fadein 3s infinite;
+  color: var(--secondary-color);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.log_out {
+  margin-right: 1rem !important;
+}
+
+/* navbar desktop and mobile */
+
+@media (max-width: 992px) {
+  .navbar-expand-lg {
+    display: none;
+  }
+
+  .offcanvas {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .offcanvas {
+    display: none;
+  }
+
+  .navbar-expand-lg {
+    display: block;
+  }
+
+  .profile-image{
+    width: 50px;
+    height: 50px;
+  }
 }
