@@ -18,11 +18,11 @@ class ExpensesController < ApplicationController
 
     if @expense.save
       flash[:notice] = 'Expense was successfully created!'
+      redirect_to category_expenses_path
     else
-      flash[:alert] = 'Expense could not be created!'
+      render :new, status: :unprocessable_entity
     end
 
-    redirect_to category_expenses_path
   end
 
   private
