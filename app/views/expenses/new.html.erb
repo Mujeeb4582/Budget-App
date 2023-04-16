@@ -6,6 +6,7 @@
 </div>
 
 <div class="container">
+<%= render 'shared/validation_messages', object: @expense %>
   <%= form_for [@category, @expense], html: {class: "form"} do |f| %>
     <div class="form-group">
       <%= f.label :name, class: 'py-2 fs-5' %>
