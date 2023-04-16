@@ -5,7 +5,8 @@
   <h1 class="mx-auto text-center mb-0 text-light">Add category</h1>
 </div>
 <div class="container">
-  <%= form_for @category do |f| %>
+  <%= render 'shared/validation_messages', object: @category %>
+  <%= form_with model: @category do |f| %>
     <div class="form-group">
       <%= f.label :name, class: 'py-2 fs-5' %>
       <%= f.text_field :name, class: 'form-control', placeholder: "Category name" %>
