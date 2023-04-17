@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+  <div class="border text-danger px-4 py-3 rounded my-4" role="alert">
+    <strong class="font-bold">Please fix the following errors:</strong>
+    <ul>
+      <% object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

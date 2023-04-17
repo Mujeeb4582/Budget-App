@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="collapse navbar-collapse" id="navbarNav">
+  <a class="navbar-brand text-light mx-4" href="#">Budget Tracking</a>
+    <h2 class="mx-auto text-center mb-0 text-light">Categories</h2>
+    <ul class="navbar-nav mx-4">
+      <li class="nav-item">
+      <a class="nav-link text-light"> <%= current_user.name %></a>
+      </li>
+      <li class="nav-item active">
+      <%= link_to "Home", root_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Edit profile", edit_user_registration_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link border-0 bg-primary log_out" %>
+      </li>
+      <li class="nav-item">
+        <%= image_tag current_user.avatar, class: 'profile-image' if current_user.avatar.attached?%>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<nav class="navbar d-lg-none">
+  <div class="container-fluid">
+    <button class="navbar-toggler navbar-toggle navbar-toggler-left d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <%= image_tag("humberger.svg", alt: "menu icon", class: "humberger") %>
+    </button>
+    <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Budget Tracking</h5>
+        <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+        <%= image_tag("close.svg", alt: "menu icon", class: "closes") %></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item text-center py-3">
+            <%= image_tag current_user.avatar, class: 'profile-image' if current_user.avatar.attached?%>
+          </li>
+          <li class="nav-item nav-links ">
+            <%= current_user.name%>
+          </li>
+          <li class="nav-item nav-links">
+            <%= link_to "Home", root_path, class: 'nav-links' %>
+          </li>
+          <li class="nav-item nav-links">
+            <%= link_to "Edit profile", edit_user_registration_path, class: 'nav-links' %>
+          </li>
+          <li class="nav-item nav-links">
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-links" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h1 class="mx-auto text-center mb-0 text-light">Categories</h1>
+  </div>
+</nav>
