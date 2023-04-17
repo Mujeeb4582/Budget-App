@@ -1,18 +1,18 @@
 databases:
-  - name: Recipe-App
-    databaseName: recipe_app_ca5k
-    user: recipe_app_ca5k_user
+  - name: Zuhra_Database
+    databaseName: zuhra_database
+    user: zuhra_database_user
 
 services:
   - type: web
-    name: budget-app
+    name: budget_app
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: Recipe-App
+          name: Zuhra_Database
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
