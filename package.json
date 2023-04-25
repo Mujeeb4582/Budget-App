@@ -12,6 +12,7 @@
     "esbuild": "^0.14.48"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "build:css": "npm-run-all --parallel \"build:css:* {@}\" --"
   }
 }
